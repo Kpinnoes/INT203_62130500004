@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Basic Vue Js - HelloWorld App</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com"> 
+  <link href="/your-path-to-fontawesome/css/all.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com"> 
+  <link rel="preconnect" href="https://fonts.gstatic.com"> 
+  <link rel="preconnect" href="https://fonts.gstatic.com"> 
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet"> <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <!-- https://tailwindcss.com/docs/installation -->
+  <!-- Using Tailwind via CDN -->
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <!-- https://v3.vuejs.org/guide/installation.html#release-notes -->
+  <!-- Vue CDN -->
+  <script src="https://unpkg.com/vue@next"></script>
+<style>
+  body { 
+background: url("https://stardewvalley.net/wp-content/uploads/2017/12/stardewbackground.png") no-repeat fixed center center / cover;
+image-rendering: pixelated;
+font-family: sans-serif;
+font-weight: 400;
+font-size: 17px;}
+  #layer-1 {background-image: url('https://stardewvalley.net/wp-content/themes/stardewvalley/images/parallax/parallax1.png');
+background-color: #000000;
+position: absolute;}
+.pixelated {
+image-rendering: optimizeSpeed;
+image-rendering: -moz-crisp-edges;
+image-rendering: -o-crisp-edges;
+image-rendering: -webkit-optimize-contrast;
+image-rendering: pixelated;
+image-rendering: optimize-contrast;
+-ms-interpolation-mode: nearest-neighbor;
+}.bird {
+  position: relative;
+  animation: mymove 50s;
+  animation-iteration-count: 1000;
+}
+
+@keyframes mymove {
+  from {right: 0px;}
+  to {right: 1600px;}
+}
+.parallax {
+  /* The image used */
+  background-image: url("images/parallax9.png");
+  /* Set a specific height */
+ height: 500px; 
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+} 
+.zzz img{
+position:absolute;
+
+} 
+
+* {box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin:0}
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+
+
+
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+
+
+  border-radius: 50%;
+}
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(255, 255, 255, 0.596)
+}
+/* Caption text */
+
+
+
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+<!--imageslide-->
+* {box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin:0}
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+ 
+/* Next & previous buttons */
+.prev, .next {
+ /* cursor: pointer;
+  position: absolute;
+  top: 50%;
+  height: 50px;
+  width: 50px;
+  padding: 16px;
+  margin-top: -16px;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  font-size: 38px;
+  text-align: center;  
+  transition: 0.6s ease;
+  border-radius: 50%;
+  -webkit-user-select: none;
+  display: block;   
+   margin-right: auto;  
+   margin-left: auto;*/
+   cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: 50px;
+  height: 50px;
+  padding: 16px;
+  margin-top: -22px;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 50%;
+  user-select: none;
+  text-align: justify;
+ 
+  
+}
+
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+
+
+</style>
+</style>
+
+
+  <script src="jquery.js"> </script> 
+  <script> 
+  // tailwind.config.js
+module.exports = {
+  // ...
+  variants: {
+    extend: {
+      divideColor: ['group-hover'],
+    }
+  },
+}
+  $(function(){
+    $("#includedContent").load("slideexam.html"); 
+  });
+  </script> 
+</head>
+
+<body>
+  <!-- This example requires Tailwind CSS v2.0+ -->
+  
+<nav class="bg-blue-800 " style="background-color: rgba(21, 71, 148, 0.8);">
+  <div class="bg-gradient-to-b from-blue-900 via-blue-100 to-yellow-500 "></div>
+  <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+    <div class="relative flex items-center justify-between h-16">
+      
+      <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+      
+      </div>
+      <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+     
+        <div class="hidden sm:block sm:ml-6">
+          <div class="flex space-x-4">
+            <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+            <a href="#" class="text-white  hover:text-yellow-300 px-3 py-2  text-xl font-sans font-medium " >HOME</a>
+            <a href="#" class="text-white  hover:text-yellow-300 px-3 py-2  text-xl font-sans font-medium">BLOG</a>
+            <a href="#" class="text-white  hover:text-yellow-300 px-3 py-2  text-xl font-sans font-medium">FORUMS</a>
+            <a href="#" class="text-white  hover:text-yellow-300 px-3 py-2  text-xl font-sans font-medium">WIKI</a>
+            <a href="#" class="text-white  hover:text-yellow-300 px-3 py-2  text-xl font-sans font-medium">MEDIA</a>
+            <a href="#" class="text-white  hover:text-yellow-300 px-3 py-2  text-xl font-sans font-medium">SHOP</a>
+            <a href="#" class="text-white  hover:text-yellow-300 px-3 py-2  text-xl font-sans font-medium">FAQ</a>
+         
+          </div>
+          
+        </div>
+      </div>
+      
+      <a href="https://twitter.com/concernedape"><img class="block lg:hidden h-8 w-auto mr-4 space-y-1 hover:text-yellow-300" src="images/twitter-32.png"></a>
+     
+        <a href="https://twitter.com/concernedape"><img class="hidden lg:block h-8 w-auto mr-4 space-y-1 hover:text-yellow-300" src="images/twitter-32.png"></a>
+      &ensp;
+      <a href="https://www.facebook.com/StardewValley"><img class="block lg:hidden h-8 w-auto mr-4 space-y-1 hover:text-yellow-300" src="images/facebook-32.png"></a>
+      <a href="https://www.facebook.com/StardewValley"><img class="hidden lg:block h-8 w-auto mr-4 space-y-1 hover:text-yellow-300" src="images/facebook-32.png"></a>
+      &ensp;
+      <a href="https://www.reddit.com/r/StardewValley/"> <img class="block lg:hidden h-8 w-auto mr-4 space-y-3 hover:text-yellow-300" src="images/reddit-32.png"></a>
+      <a href="https://www.reddit.com/r/StardewValley/"> <img class="hidden lg:block h-8 w-auto mr-4 space-y-3 hover:text-yellow-300" src="images/reddit-32.png"></a>
+      &ensp;
+      <a href="https://www.stardewvalley.net/contact/">  <img class="block lg:hidden h-8 w-auto mr-4 space-y-3 hover:text-yellow-300" src="images/mail-2-32.png"></a>
+      <a href="https://www.stardewvalley.net/contact/"> <img class="hidden lg:block h-8 w-auto mr-4 space-y-3 hover:text-yellow-300" src="images/mail-2-32.png"></a>
+      &ensp;
+      <a href="https://discord.com/invite/StardewValley"> <img class="block lg:hidden h-8 w-auto mr-4 space-y-3 hover:text-yellow-300" src="images/discord-2-32.png"></a>
+      <a href="https://discord.com/invite/StardewValley"> <img class="hidden lg:block h-8 w-auto mr-4 space-y-3 hover:text-yellow-300" src="images/discord-2-32.png"></a>
+     
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+  <div class="bg-gradient-to-b from-blue-900 via-green-300 to-yellow-500 ">
+
+  <div class="bg-fixed bg-cover" style="background-image:url('images/stardewbackground.png');">
+ <!--<div class="panel" id="parallax">
+  <div class="panel_layer pixelated" id="layer-1"></div>
+  <div class="panel_layer pixelated" id="layer-2"></div>
+  <div class="panel_layer parallax pixelated" id="layer-3a" data-speed="15" style="transform: translate3d(0px, -37.5px, 0px)"></div>
+  <div class="panel_layer parallax pixelated" id="layer-3b" data-speed="15" style="transform: translate3d(0px, -37.5px, 0px)"></div>
+  <div class="panel_layer parallax pixelated" id="layer-4" data-speed="65" style="transform: translate3d(0px, -162.5px, 0px)"></div>
+  
+  <div class="panel_layer parallax pixelated" id="layer-6" data-speed="78" style="transform: translate3d(0px, -195px, 0px)"></div>
+  <div class="panel_layer parallax pixelated" id="layer-7" data-speed="89" style="transform: translate3d(0px, -222.5px, 0px)"></div>
+  <div class="panel_layer parallax pixelated" id="layer-8" data-speed="100" style="transform: translate3d(0px, -250px, 0px)"><div id="bird"></div></div>
+  <div class="panel_layer parallax pixelated" id="layer-9" data-speed="100" style="transform: translate3d(0px, -250px, 0px)"></div>
+  <div class="panel_layer parallax pixelated" id="layer-10" data-speed="100" style="transform: translate3d(0px, -250px, 0px)"></div>
+  <div class="panel_layer pixelated" id="layer-13" data-speed="100"></div>
+  <div class="panel_layer pixelated" id="layer-12" data-speed="100"></div>
+  <div class="content_break"></div>
+</div> class=" h-auto w-auto  object-center pt-36 pl-10 pb-28" style="margin: auto;" -->
+ <div class=" grid justify-items-center pt-20"><img src="images/main_logo.png"></div>
+
+ <!-- <div class=" md:container mx-auto ">
+   
+  <img class=" object-center" src="images/main_logo.png" 
+  style=" align-content: center; align-items: center">
+</div>-->
+<!--<div class="parallax"></div> -->
+<div class=" container  flex  justify-end mt-24">
+  <img class="bird" src="images/stardew_bird.gif"></div>
+ 
+  <img  class=" w-auto h-auto object-center"  src="images/sdv_divider copy 1.png ">
+
+
+</div>
+</div> <!--image bg-->
+ <div style="background: linear-gradient(-180deg, #fae791, #ffffcc);" >
+  <div class="text-center" >
+  
+  <p class=" px-3  py-3 font-black" 
+  style=" color: #0066cc;
+   font-size: 45px;
+   font-weight: bold;
+   font-family: 'Nunito', sans-serif;
+   ">You're moving to the Valley... </p>
+  
+ <p class="   text-xl font-medium" style="color: #333; font-weight: 400; font-size: 17px;font-family: 'Open Sans', sans-serif;" >You've inherited your grandfather's old farm plot in <span class="  py-1 text-xl font-blod" style=" color: #ff6633; font-weight: 700; font-size: 17px;font-family: 'Open Sans', sans-serif;">Stardew Valley</span>.</p>
+ 
+<p class="  text-xl font-medium" style=" color: #333; font-weight: 400; font-size: 17px;font-family: 'Open Sans', sans-serif;" > Armed with hand-me-down tools and a few coins, you set out to begin your new life!</p>  
+
+<hr class="bore"style="height: 6px;
+background: url(https://stardewvalley.net/wp-content/uploads/2017/12/hrspike.png) repeat-x 0 0;
+border: 4;">
+<div class="py-2"></div>
+
+  <!-- <div class="w3-display-container mySlides container mx-auto  bg-yellow-200">
+      <img class="h-auto w-auto object-none object-center py-20" src="images/1_1screenshot15.png">
+    </div> -->
+  </div>
+ 
+  <!---->
+
+  <div class=" group slideshow-container ">
+
+    <div class="mySlides fade  ">
+
+      <img class="group-hover:text-gray-900" src="images/1_1screenshot15.png" style="width:100%">
+
+    </div>
+    
+    <div class="mySlides fade group-hover:text-gray-900">
+      <img src="images/NightMarket-1-1.png" style="width:100%">
+    </div>
+    
+    <div class="mySlides fade group-hover:text-gray-900">
+      <img src="images/Multiplayer_Screenshot2-1.png" style="width:100%">
+    </div>
+
+    <div class="mySlides fade group-hover:text-gray-900">
+      <img src="images/StardewValley_12-1.png" style="width:100%">
+    </div>
+
+    <div class="mySlides fade group-hover:text-gray-900">
+      <img src="images/StardewValley_4.png" style="width:100%">
+    </div>
+
+    <div class="mySlides fade">
+      <img src="images/StardewValley_11.png" style="width:100%">
+    </div>
+    <div class="mySlides fade">
+      <img src="images/StardewValley_5.png" style="width:100%">
+    </div>
+    
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    
+    </div>
+    <script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
+    
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+    
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+    
+    function showSlides(n) {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("dot");
+      if (n > slides.length) {slideIndex = 1}    
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";  
+      }
+      for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active";
+      setTimeout(showSlides, 2000); // Change image every 2 seconds
+    
+    }
+ 
+    </script>
+ 
+<div class="pt-1">
+<hr class="border-solid "style="height: 6px;
+background: url(https://stardewvalley.net/wp-content/uploads/2017/12/hrspike.png) repeat-x 0 0;
+border: 4;"></div>
+
+  <div class="-m-2 mb-4 text-center">
+    <p class=" font-black" 
+    style=" color: #0066cc;
+     font-size: 45px;
+     font-weight: bold;
+     font-family: 'Nunito', sans-serif;
+     ">Features </p>
+  
+<ul>
+  <li><span class="  text-xl  font-medium " style=" color: #ff6633; font-weight: 700; font-size: 17px;font-family: 'Open Sans', sans-serif;">Create the farm of your dreams: </span>
+    <span  class="text-xl font-medium" style="color: #333; font-weight: 400; font-size: 17px;font-family: 'Open Sans', sans-serif;" > Turn your overgrown fields into a lively and bountiful farm! </span></li>
+    <li><span class="  text-xl font-sans font-medium" style=" color: #ff6633; font-weight: 700; font-size: 17px;font-family: 'Open Sans', sans-serif;" > Learn to live off the land: </span>
+      <span  class="text-xl font-medium" style="color: #333; font-weight: 400; font-size: 17px;font-family: 'Open Sans', sans-serif;" >  Raise animals, go fishing, tend to crops, craft items, or do it all! The choice is yours...</span></li>
+    <li><span class=" text-xl font-sans font-medium " style=" color: #ff6633; font-weight: 700; font-size: 17px;font-family: 'Open Sans', sans-serif;">  Become a part of the local community:  </span>
+      <span  class="text-xl font-medium" style="color: #333; font-weight: 400; font-size: 17px;font-family: 'Open Sans', sans-serif;" >Pelican Town is home to over 30 residents you can befriend! </span></li>
+    <li><span class=" text-xl font-sans font-medium " style=" color: #ff6633; font-weight: 700; font-size: 17px;font-family: 'Open Sans', sans-serif;">  Meet someone special: </span>
+      <span  class="text-xl font-medium" style="color: #333; font-weight: 400; font-size: 17px;font-family: 'Open Sans', sans-serif;">With 12 townsfolk to date, you may even find someone to start a family with! </span></li>
+    <li><span class=" text-xl font-sans font-medium " style=" color: #ff6633; font-weight: 700; font-size: 17px;font-family: 'Open Sans', sans-serif;"> Explore vast, mysterious caves:  </span>
+       <span  class="text-xl font-medium" style="color: #333; font-weight: 400; font-size: 17px;font-family: 'Open Sans', sans-serif;" >  Encounter dangerous monsters & valuable treasures deep underground!</span></li>
+    <li><span class=" text-xl font-sans font-medium " style=" color: #ff6633; font-weight: 700; font-size: 17px;font-family: 'Open Sans', sans-serif;"> Customize: </span>
+       <span  class="text-xl font-medium" style="color: #333; font-weight: 400; font-size: 17px;font-family: 'Open Sans', sans-serif;"> There are hundreds of character & home decoration options to choose from!</span></li>
+  </ul>
+ 
+</div>
+<div>
+  <div class=" container mx-auto flex items-center justify-center ">
+  <div><a href="http://store.steampowered.com/app/413150/Stardew_Valley/">
+    <img class="  m-7 -mr-4 h-20 w-auto space-y-1 " 
+    src="images/STEAM_logo.png"></a>
+  </div>
+
+  <div class=""><a href="https://www.humblebundle.com/store/stardew-valley" >
+    <img class="m-7 h-10 w-auto space-y-1" src="images/HUMBLESTORE_logo.png"></a>
+</div>  
+<div class=""><a href="https://www.gog.com/game/stardew_valley">
+  <img class=" m-7 h-20 w-auto  space-x-4 space-y-1" src="images/GOG_logo.png"></a></div>
+<div>
+  <a href="https://www.microsoft.com/en-gb/store/p/stardew-valley/c3d891z6tnqm ">
+    <img class=" m-7 h-auto w-23 space-x-4 space-y-1 " src="images/XBOXOne_logo.png"></a>
+  </div>
+<div><a href="https://www.playstation.com/en-us/games/stardew-valley-ps4/">
+  <img class=" m-8 h-auto w-23 space-x-4 space-y-1" src="images/PS4_logo.png"></a>
+</div>
+<div>
+  <a href="https://www.nintendo.co.uk/Games/Nintendo-Switch-download-software/Stardew-Valley-1287587.html"><img class=" m-7 h-auto w-auto space-y-1 mt-10" src="images/NintendoSwitch_logo.png"></a>
+</div></div>
+</div>
+<div class="container mx-auto" style="max-width: 500px; margin: auto;">
+<div class="container mx-auto px-32 flex-1 flex items-center justify-center sm:items-stretch sm:justify-start ">
+<img class="m-7 h-auto w-auto space-y-1" src="images/iOS_logo.png">
+<img class="m-7 h-auto w-auto space-y-1" src="images/android_logo.png">
+</div>
+</div>
+<div class="container mx-auto justify-center " style="max-width: weight; margin: auto; ">
+  <div class=" container mx-auto px-32 flex items-center justify-center">
+    <div >
+       <a href="https://pegi.info/"><img class="h-20 w-auto space-y-1 opacity-50 hover:opacity-100" style="width:65px; height:78px;" src="images/PEGI.png"></a>
+      </div><div >
+    <a href="http://classification.gov.au" ><img class="m-4 -mr-4 h-20 w-auto space-y-1 opacity-50 hover:opacity-100 " src="images/ACB_Rating_PG.png"></a>
+</div>
+<div><a href="http://www.usk.de" ><img class="  m-7 -mr-4 h-20 w-auto space-y-1 opacity-50 hover:opacity-100" src="images/USK_6.png"></a>
+</div>
+
+<div class="border-black border-solid border-2 m-7 -mr-4 h-20 w-auto  space-y-1 opacity-50 hover:opacity-100"style="height:68px; min-width: 172px;"><a href="http://esrb.org/" title="" target="new"><img id="ESRB" src="https://stardewvalley.net/wp-content/uploads/2018/04/ESRB_Rating.png" style="float:left;height:auto;width:43px;"></a><div style="font-size:8px; color:black; font-weight:bold; padding-right:10px;padding-left:3px; line-height:11px;display:inline-grid;padding-top:3px; text-align:left;vertical-align:top;">Fantasy Violence<br>
+  Mild Blood<br>
+  Mild Language<br>
+  Simulated Gambling<br>
+  Use of Alcohol and Tobacco<br></div></div> </div>
+</div>
+<img class="container  w-auto mx-auto px-48 flex-1 flex align-middle justify-items-center sm:items-stretch sm:justify-start "  id="concernedape_logo" src="images/ca_logo.png">
+<p class=" pt-8 text-center text-base text-lg font-light" style="color: #333; font-weight: 400; font-size: 17px;font-family: 'Open Sans', sans-serif;" >Stardew Valley Copyright © 2016-2020 ConcernedApe LLC </p> 
+<div class="text-blue-500 pb-2 pt-5 text-center ">
+     <a class="text-lg" style="color: #0066cc; font-weight: 400; font-size: 17px;font-family: 'Open Sans', sans-serif;"   href="https://www.stardewvalley.net/privacy">Privacy Policy</a>
+     <a class="text-lg ml-10" style="color: #0066cc; font-weight: 400; font-size: 17px;font-family: 'Open Sans', sans-serif;" href="https://www.stardewvalley.net/terms">Terms of use</a>   
+     <a class="text-lg ml-10" style="color: #0066cc; font-weight: 400; font-size: 17px;font-family: 'Open Sans', sans-serif;" href="https://www.stardewvalley.net/jobs">Jobs</a>
+</div>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</body>
+
+</html>
